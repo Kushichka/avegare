@@ -8,7 +8,7 @@ public class Main {
 	test();
     }
 
-    public static int test2(int a)
+    public static void test2(int a)
     {
         if(a > 100)
         {
@@ -18,10 +18,9 @@ public class Main {
         {
             System.out.println("Число меньше 100");
         }
-        return a;
     }
 
-    public static int test()
+    public static void test()
     {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите первое число");
@@ -31,10 +30,11 @@ public class Main {
         if(second <= first)
         {
             System.out.println("Второе число должно быть больше первого");
-            return 0;
+            return;
         }
         int sum = 0;
         int a = 0;
+        int result;
 
         while(first <= second)
         {
@@ -42,8 +42,8 @@ public class Main {
             first++;
             a++;
         }
-
-        System.out.println("Среднее арифметическое: " + sum/a);
-        return test2(sum/a);
+        result = sum/a;
+        System.out.println("Среднее арифметическое: " + result);
+        test2(result);
     }
 }
